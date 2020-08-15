@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     
+    public float NonSprint = 10f;
 
-    public float moveSpeed = 5f;
+    private float moveSpeed = 10f;
 
-    public float sprintSpeed = 10f;
+    public float sprintSpeed = 20f;
 
     public Rigidbody2D rb;
 
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            moveSpeed = 5f;
+            moveSpeed = NonSprint;
         }
 
 
