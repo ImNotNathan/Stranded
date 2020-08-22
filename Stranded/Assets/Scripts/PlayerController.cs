@@ -40,10 +40,6 @@ public class PlayerController : MonoBehaviour
         // Movement
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        
-            
-            
-
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
     }
 }
