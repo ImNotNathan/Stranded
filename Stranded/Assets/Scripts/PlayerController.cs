@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
 
+    Vector3 PlayerScale;
+    
+    private void Start()
+    {
+        PlayerScale = transform.localScale;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -32,14 +39,16 @@ public class PlayerController : MonoBehaviour
             moveSpeed = NonSprint;
         }
 
-
+        if (movement.x > 0) transform.localScale = PlayerScale;
+        if (movement.x < 0) transform.localScale = new Vector3(-PlayerScale.x, PlayerScale.y, PlayerScale.z);
     }
 
     void FixedUpdate()
     {
         // Movement
 
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = new Vector2(movement.x, movement.y) * moveSpeed;
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
     }
 }
