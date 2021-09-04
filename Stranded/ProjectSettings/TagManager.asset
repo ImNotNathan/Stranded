@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tree
+  - Bush
+  - Iron
+  - Rock
   layers:
   - Default
   - TransparentFX
